@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", "Open Sans", sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(rgba(141, 141, 141, 0.1) 20%, rgba(0, 0, 0, 0.1)),
+    url(../img/Background.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  filter: blur(10px);
+  z-index: 3;
+  transition: opacity 2s ease-in-out, filter 2s ease-in-out;
+}
+
+header {
+  margin-right: 50px;
+  margin-top: 6em;
+  z-index: 1;
+}
+
+header > h1 {
+  margin-right: 20px;
+  font-size: medium;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 1px 15px 3px 15px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
+
+#rest {
+  flex: 1;
+}
+
+header > img {
+  margin-left: 100px;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  border: 2px solid #eff;
+}
+
+.btn {
+  margin-right: 10px;
+  width: 80%;
+  height: 45px;
+  max-width: 350px;
+  margin-top: 20px;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: background-color 0.4s ease-in;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn > a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+}
+
+svg {
+  margin-right: 10px;
+}
+
+#vanta {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+section .tress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes animateGirl {
+  0% {
+    transform: translateX(calc(100% + 100vw));
+  }
+  50% {
+    transform: translateX(calc(-100% - 100vw));
+  }
+  50.01% {
+    transform: translateX(calc(-100% - 100vw)) rotateY(180deg);
+  }
+  100% {
+    transform: translateX(calc(100% + 100vw)) rotateY(180deg);
+  }
+}
+
+section .girl {
+  position: absolute;
+  scale: 0.5;
+  pointer-events: none;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  animation: animateGirl 15s linear infinite;
+}
+
+.leaves {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.leaves .set {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.leaves .set div {
+  position: absolute;
+  display: block;
+}
+
+.leaves .set div:nth-child(1) {
+  left: 20%;
+  animation: animate 20s linear infinite;
+}
+
+.leaves .set div:nth-child(2) {
+  left: 50%;
+  animation: animate 14s linear infinite;
+}
+
+.leaves .set div:nth-child(3) {
+  left: 70%;
+  animation: animate 12s linear infinite;
+}
+
+.leaves .set div:nth-child(4) {
+  left: 5%;
+  animation: animate 15s linear infinite;
+}
+
+.leaves .set div:nth-child(5) {
+  left: 85%;
+  animation: animate 18s linear infinite;
+}
+
+.leaves .set div:nth-child(6) {
+  left: 90%;
+  animation: animate 12s linear infinite;
+}
+
+.leaves .set div:nth-child(7) {
+  left: 15%;
+  animation: animate 14s linear infinite;
+}
+
+.leaves .set div:nth-child(8) {
+  left: 60%;
+  animation: animate 15s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    top: -10%;
+    transform: translateX(20px) rotate(0deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    transform: translate(-20px) rotate(45deg);
+  }
+  40% {
+    transform: translate(-20px) rotate(90deg);
+  }
+  60% {
+    transform: translate(20px) rotate(180deg);
+  }
+  80% {
+    transform: translate(-20px) rotate(45deg);
+  }
+  100% {
+    transform: translate(20px) rotate(225deg);
+  }
+}
